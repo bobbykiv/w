@@ -22,7 +22,7 @@
         const urlParams = new URLSearchParams(queryString);
         const redirect = urlParams.get("ru");
         const r = urlParams.get("r");
-        if(((r != NaN) && (rs.length != 0)) && (rs.length > r))
+        if((((r != NaN) && (rs.length != 0)) && (rs.length > r)) && (r != null))
         {
             redirect = rs[r];
         }
