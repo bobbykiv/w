@@ -15,6 +15,7 @@
         console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
         const redirect = urlParams.get("ru");
+        const redirecthtml = "<p>You should be redirected to <a href=\"" + redirect + "\">" + redirect + "</a> soon...";
         if(redirect == null){
             maindiv.innerHTML = mainhtml;
         }
