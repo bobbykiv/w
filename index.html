@@ -14,9 +14,13 @@
         const queryString = window.location.search;
         console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
-        const redirect = urlParams.get("r");
-        if(!redirect == null){
+        const redirect = urlParams.get("ru");
+        if(redirect == null){
             maindiv.innerHTML = mainhtml;
+        }
+        else
+        {
+            
         }
     </script>
 </body>
