@@ -7,20 +7,16 @@
     <title>bobbykiv Web</title>
 </head>
 <body>
-    <div>
-        <h1 id="bobbykiv-web">bobbykiv web</h1>
-        <h4 id="can-redirect-to-pages-and-load-html-strings.">Can redirect to pages and load HTML strings.</h4>
-        <h2 id="examples">Examples</h2>
-        <a href="https://bobbykiv.github.io/w?ru=%22https%3A%2F%2Fwww.windows93.net%2F%22">https://www.windows93.net</a>
-        <a href="https://bobbykiv.github.io/w?ru=%22https%3A%2F%2Fdollchan.net%2Fbytebeat%2F%22">https://dollchan.net/bytebeat</a>
-    </div>
+    <div id="main"></div>
     <script>
+        const maindiv = document.getElementById("main");
+        const mainhtml = "<h1>bobbykiv web</h1>\n<h4>Can redirect to pages and load HTML strings.</h4><h2>Examples</h2>\n<a href=\"https://bobbykiv.github.io/w?ru=%22https%3A%2F%2Fwww.windows93.net%2F%22\">https://www.windows93.net</a>\n<a href=\"https://bobbykiv.github.io/w?ru=%22https%3A%2F%2Fdollchan.net%2Fbytebeat%2F%22\">https://dollchan.net/bytebeat</a>";
         const queryString = window.location.search;
         console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
         const redirect = urlParams.get("r");
         if(!redirect == null){
-            location.replace(redirect);
+            maindiv.innerHTML = mainhtml;
         }
     </script>
 </body>
