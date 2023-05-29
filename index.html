@@ -13,9 +13,15 @@
         const maindiv = document.getElementById("main");
         const mainhtml = "<h1>bobbykiv web</h1>\nCan redirect to pages and load HTML strings.<br>Github source: <a href=\"https://bobbykiv.github.io/w?ru=https%3A%2F%2Fgithub.com%2Fbobbykiv%2Fw%2F\">https://github.com/bobbykiv/w/</a><br><h2>Examples</h2>\n<a href=\"https://bobbykiv.github.io/w?ru=https%3A%2F%2Fwww.windows93.net%2F\">https://www.windows93.net</a><br>\n<a href=\"https://bobbykiv.github.io/w?ru=https%3A%2F%2Fdollchan.net%2Fbytebeat%2F\">https://dollchan.net/bytebeat</a><br>";
         const queryString = window.location.search;
+        const rs = ["https://www.windows93.net","https://dollchan.net/bytebeat"];
         console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
         const redirect = urlParams.get("ru");
+        const r = urlParams.get("r");
+        if(((r != NaN) && (rs.length != 0)) && (rs.length > r))
+        {
+            redirect = rs[r];
+        }
         const redirecthtml = "<p>You should be redirected to <a href=\"" + redirect + "\">" + redirect + "</a> soon...";
         if(redirect == null){
             maindiv.innerHTML = mainhtml;
